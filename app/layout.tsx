@@ -5,7 +5,7 @@ import "./globals.css"
 const heebo = Heebo({ subsets: ["latin", "hebrew"] })
 
 export const metadata: Metadata = {
-  title: "Lumière — Luxury Perfumes",
+  title: "Parfum Deals — Luxury Decants",
   description: "Discover our collection of handcrafted luxury fragrances.",
   generator: 'v0.dev'
 }

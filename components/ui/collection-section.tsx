@@ -129,7 +129,7 @@ export default function CollectionSection() {
           className="text-[10px] uppercase tracking-[0.35em] mb-3 opacity-50"
           style={{ color: LIME, fontFamily: FONT }}
         >
-          Lumière
+          Parfum Deals
         </p>
         <h2
           className="font-bold tracking-tighter leading-none uppercase"
@@ -158,7 +158,7 @@ export default function CollectionSection() {
           className="text-[10px] uppercase tracking-[0.3em]"
           style={{ color: LIME, fontFamily: FONT, opacity: 0.3 }}
         >
-          Lumière · Luxury Decants
+          Parfum Deals · Luxury Decants
         </span>
         <div className="flex-1 h-px" style={{ backgroundColor: LIME, opacity: 0.15 }} />
       </div>

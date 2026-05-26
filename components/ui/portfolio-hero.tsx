@@ -207,7 +207,7 @@ export default function PortfolioHero() {
               fontFamily: "'Dancing Script', cursive",
             }}
           >
-            L
+            PD
           </div>
 
           {/* Spacer */}
@@ -239,7 +239,7 @@ export default function PortfolioHero() {
           >
             <img
               src="https://res.cloudinary.com/donzqvn9k/image/upload/v1779761372/HAILEY_BIEBER_FOR_TOM_FORD-removebg-preview_cemsl3.png"
-              alt="Lumière"
+              alt="Parfum Deals"
               className="h-56 sm:h-72 md:h-96 lg:h-[28rem] w-auto object-contain relative z-10"
               style={{ filter: "grayscale(100%) contrast(1.2) brightness(0.9)" }}
             />
