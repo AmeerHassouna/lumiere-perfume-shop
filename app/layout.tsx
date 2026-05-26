@@ -20,7 +20,7 @@ export default function RootLayout({
       <head>
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&family=Dancing+Script:wght@700&display=swap"
         />
       </head>
       <body className={heebo.className}>{children}</body>

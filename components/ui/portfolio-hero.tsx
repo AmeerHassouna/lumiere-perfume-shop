@@ -204,7 +204,7 @@ export default function PortfolioHero() {
             style={{
               fontSize: scrolled ? "1.75rem" : "2.25rem",
               color: "#C3E41D",
-              fontFamily: "'Brush Script MT', 'Lucida Handwriting', cursive",
+              fontFamily: "'Dancing Script', cursive",
             }}
           >
             L
@@ -250,7 +250,7 @@ export default function PortfolioHero() {
           </div>
 
           {/* Text below image */}
-          <div className="text-center">
+          <div className="text-center" dir="ltr">
             <BlurText
               text="PERFUME"
               delay={100}
