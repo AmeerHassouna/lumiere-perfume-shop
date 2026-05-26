@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Clock, Wind, Flame, Droplets, ShoppingCart, ChevronLeft } from 'lucide-react';
 import type { Perfume } from '@/lib/perfumes';
@@ -198,50 +198,30 @@ const ProductDetails = ({ perfume, size }: { perfume: Perfume; size: DecantSize 
 
 // ── Size Switcher ─────────────────────────────────────────────────────────────
 
-const Switcher = ({ active, onToggle }: { active: DecantSize; onToggle: (s: DecantSize) => void }) => {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > 80);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  return (
-    <AnimatePresence>
-      {visible && (
-        <motion.div
-          initial={{ y: 80, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 80, opacity: 0 }}
-          transition={{ type: 'spring', stiffness: 320, damping: 28 }}
-          className="fixed bottom-10 inset-x-0 flex justify-center z-50 pointer-events-none"
+const Switcher = ({ active, onToggle }: { active: DecantSize; onToggle: (s: DecantSize) => void }) => (
+  <div className="fixed bottom-10 inset-x-0 flex justify-center z-50 pointer-events-none">
+    <div
+      className="pointer-events-auto flex items-center gap-1 p-1"
+      style={{ backgroundColor: 'hsl(0 0% 0%)', border: `1px solid ${LIME}35` }}
+    >
+      {(['3ml', '5ml', '10ml'] as DecantSize[]).map((size) => (
+        <button
+          key={size}
+          onClick={() => onToggle(size)}
+          className="w-20 h-10 flex items-center justify-center text-sm transition-all duration-200"
+          style={{
+            fontFamily: FONT,
+            backgroundColor: active === size ? LIME : 'transparent',
+            color: active === size ? 'hsl(0 0% 0%)' : LIME,
+            opacity: active === size ? 1 : 0.5,
+          }}
         >
-          <div
-            className="pointer-events-auto flex items-center gap-1 p-1"
-            style={{ backgroundColor: 'hsl(0 0% 0%)', border: `1px solid ${LIME}35` }}
-          >
-            {(['3ml', '5ml', '10ml'] as DecantSize[]).map((size) => (
-              <button
-                key={size}
-                onClick={() => onToggle(size)}
-                className="w-20 h-10 flex items-center justify-center text-sm transition-all duration-200"
-                style={{
-                  fontFamily: FONT,
-                  backgroundColor: active === size ? LIME : 'transparent',
-                  color: active === size ? 'hsl(0 0% 0%)' : LIME,
-                  opacity: active === size ? 1 : 0.5,
-                }}
-              >
-                {size}
-              </button>
-            ))}
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  );
-};
+          {size}
+        </button>
+      ))}
+    </div>
+  </div>
+);
 
 // ── Main ──────────────────────────────────────────────────────────────────────
 
