@@ -5,9 +5,18 @@ import "./globals.css"
 const heebo = Heebo({ subsets: ["latin", "hebrew"] })
 
 export const metadata: Metadata = {
-  title: "Parfum Deals — Luxury Decants",
-  description: "Discover our collection of handcrafted luxury fragrances.",
-  generator: 'v0.dev'
+  title: "Perfume Deals — Luxury Decants",
+  description: "Shop iconic luxury fragrances in 3ml, 5ml & 10ml decants. Try before you commit — premium scents at accessible prices.",
+  openGraph: {
+    title: "Perfume Deals — Luxury Decants",
+    description: "Shop iconic luxury fragrances in 3ml, 5ml & 10ml decants. Try before you commit — premium scents at accessible prices.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Perfume Deals — Luxury Decants",
+    description: "Shop iconic luxury fragrances in 3ml, 5ml & 10ml decants. Try before you commit — premium scents at accessible prices.",
+  },
 }
 
 export default function RootLayout({
