@@ -66,6 +66,23 @@
   }
 }
 
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes pulse-glow {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.06); }
+}
+@keyframes float-y {
+  0%, 100% { transform: translateY(-8px); }
+  50%       { transform: translateY(8px); }
+}
+
+.animate-spin-slow  { animation: spin-slow  20s linear infinite; will-change: transform; }
+.animate-pulse-glow { animation: pulse-glow  4s ease-in-out infinite; will-change: transform; }
+.animate-float-y    { animation: float-y     6s ease-in-out infinite; will-change: transform; }
+
 @layer utilities {
   @keyframes fade-in {
     from {

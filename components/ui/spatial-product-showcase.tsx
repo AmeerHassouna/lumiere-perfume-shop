@@ -32,27 +32,19 @@ const ANIM = {
 
 const ProductVisual = ({ perfume, size }: { perfume: Perfume; size: DecantSize }) => (
   <motion.div layout="position" className="relative shrink-0 flex items-center justify-center">
-    <motion.div
-      animate={{ rotate: 360 }}
-      transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-      className="absolute inset-[-18%] rounded-full border border-dashed"
+    <div
+      className="absolute inset-[-18%] rounded-full border border-dashed animate-spin-slow"
       style={{ borderColor: `${LIME}25` }}
     />
-    <motion.div
-      animate={{ scale: [1, 1.06, 1] }}
-      transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-      className="absolute inset-0 rounded-full blur-3xl opacity-10"
+    <div
+      className="absolute inset-0 rounded-full blur-3xl opacity-10 animate-pulse-glow"
       style={{ backgroundColor: LIME }}
     />
     <div
       className="relative h-64 w-64 md:h-[400px] md:w-[400px] rounded-full flex items-center justify-center overflow-hidden"
       style={{ border: `1px solid ${LIME}18`, backgroundColor: `${LIME}04` }}
     >
-      <motion.div
-        animate={{ y: [-8, 8, -8] }}
-        transition={{ repeat: Infinity, duration: 6, ease: 'easeInOut' }}
-        className="w-full h-full flex items-center justify-center"
-      >
+      <div className="w-full h-full flex items-center justify-center animate-float-y">
         <AnimatePresence mode="wait">
           <motion.img
             key={size}
@@ -74,7 +66,7 @@ const ProductVisual = ({ perfume, size }: { perfume: Perfume; size: DecantSize }
             style={{ backgroundColor: LIME, mixBlendMode: 'soft-light', opacity: 0.08 }}
           />
         </AnimatePresence>
-      </motion.div>
+      </div>
     </div>
   </motion.div>
 );
